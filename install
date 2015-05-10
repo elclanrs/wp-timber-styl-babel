@@ -1,0 +1,30 @@
+#!/bin/bash
+
+npm install --save-dev \
+  babelify \
+  browserify \
+  deamdify \
+  debowerify \
+  gulp \
+  gulp-filter \
+  gulp-flatten \
+  gulp-livereload \
+  gulp-minify-css \
+  gulp-plumber \
+  gulp-rename \
+  gulp-sourcemaps \
+  gulp-stylus \
+  gulp-uglify \
+  gulp-util \
+  jeet \
+  main-bower-files \
+  nib \
+  rupture \
+  uglify-js \
+  vinyl-buffer \
+  vinyl-source-stream \
+  watchify
+
+bower install --save jquery
+bower install --save normalize.css
+bower install --save fontawesome

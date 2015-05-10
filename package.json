@@ -1,0 +1,9 @@
+{
+  "name": "wp-timber-styl-es6",
+  "devDependencies": {
+  },
+  "scripts": {
+    "start": "gulp",
+    "deploy": "gulp assets"
+  }
+}

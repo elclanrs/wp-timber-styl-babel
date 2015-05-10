@@ -1,0 +1,8 @@
+{% extends "master.twig" %}
+
+{% block content %}
+  {% for post in posts %}
+    <h2>{{post.title}}</h2>
+    {{post.content}}
+  {% endfor %}
+{% endblock %}

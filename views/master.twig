@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{site.theme.link}}/lib/css/index.min.css">
+<link rel="stylesheet" href="{{site.theme.link}}/lib/css/bower_components.css">
+<link rel="shortcut icon" href="{{site.url}}/favicon.ico?v=1">
+<title>{{wp_title}}</title>
+{{wp_head}}
+</head>
+<body class="{{body_class}} {{post.slug}}">
+
+<header id="main-header">
+  <div class="container">
+    <nav id="main-menu">
+      <ul class="menu">
+        {% for item in menu.get_items %}
+          <li class="{{item.classes|join(" ")}} menu-item-{{item.slug}}">
+            <a href="{{item.get_link}}">{{item.title}}</a>
+            {% if item.get_children %}
+              <ul class="menu menu__submenu">
+                {% for child in item.get_children %}
+                  <li class="{{child.classes|join(" ")}}">
+                    <a href="{{child.get_link}}">{{child.title}}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% include "partial/searchform.twig" with {placeholder: "Search:"} %}
+  </div>
+</header>
+
+<div class="page-wrap">
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+</div>
+
+<footer id="main-footer">
+  <div class="container">
+    <p>{{site.name}} &copy; {{"now"|date("Y")}}</p>
+  </div>
+</footer>
+
+<script src="{{site.theme.link}}/lib/js/index.js"></script>
+{{wp_footer}}
+</body>
+</html>

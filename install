@@ -12,6 +12,7 @@ npm install --save-dev \
   gulp-minify-css \
   gulp-plumber \
   gulp-rename \
+  gulp-concat \
   gulp-sourcemaps \
   gulp-stylus \
   gulp-uglify \

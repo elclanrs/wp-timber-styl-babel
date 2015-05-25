@@ -16,8 +16,14 @@ caps()
   letter-spacing 1px
   font-weight bold
 
-arrow(size=10px, color=blue, pos=top 100% left 50%)
+arrow(color=inherit, pos=top, size=8px)
   absolute pos
-  margin-left (- size)
+  margin-{pos} (- size*2)
   border size solid transparent
-  border-top-color color
+  border-{opposite-position(pos)}-color color
+  if pos is top or pos is bottom
+    left 50%
+    margin-left (- size)
+  else
+    top 50%
+    margin-top (- size)

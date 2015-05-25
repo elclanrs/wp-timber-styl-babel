@@ -113,4 +113,4 @@ gulp.task('reload', function() {
 })
 
 gulp.task('assets', ['js:compile', 'js:minify', 'css:compile', 'bower'])
-gulp.task('default', ['js:watch', 'reload'])
+gulp.task('default', ['assets', 'js:watch', 'reload'])

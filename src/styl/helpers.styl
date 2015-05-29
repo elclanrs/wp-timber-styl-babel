@@ -18,12 +18,12 @@ caps()
 
 arrow(color=inherit, pos=top, size=8px)
   absolute: pos
-  margin-{pos}: (- size*2)
+  margin-{pos}: -(size*2)
   border: size solid transparent
   border-{opposite-position(pos)}-color: color
   if pos is top or pos is bottom
     left: 50%
-    margin-left: (- size)
+    margin-left: -(size)
   else
     top: 50%
-    margin-top: (- size)
+    margin-top: -(size)

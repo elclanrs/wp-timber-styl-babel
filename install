@@ -29,3 +29,7 @@ npm install --save-dev \
 bower install --save jquery
 bower install --save normalize.css
 bower install --save fontawesome
+
+gulp assets
+
+rm $0

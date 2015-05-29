@@ -1,15 +1,15 @@
 ir()
-  text-indent -9999px
+  text-indent: -9999px
 
 va()
-  position relative
-  top 50%
-  transform translateY(-50%)
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
 
 responsive()
-  display block
-  width 100%
-  height auto
+  display: block
+  width: 100%
+  height: auto
 
 caps()
   text-transform uppercase
@@ -17,13 +17,13 @@ caps()
   font-weight bold
 
 arrow(color=inherit, pos=top, size=8px)
-  absolute pos
-  margin-{pos} (- size*2)
-  border size solid transparent
-  border-{opposite-position(pos)}-color color
+  absolute: pos
+  margin-{pos}: (- size*2)
+  border: size solid transparent
+  border-{opposite-position(pos)}-color: color
   if pos is top or pos is bottom
-    left 50%
-    margin-left (- size)
+    left: 50%
+    margin-left: (- size)
   else
-    top 50%
-    margin-top (- size)
+    top: 50%
+    margin-top: (- size)

@@ -19,12 +19,22 @@ function scripts() {
 
 add_filter('nav_menu_css_class', 'menu_class', 10, 2);
 function menu_class($classes, $item) {
-  // Highlight menu item in post type archive and singular
-  $post_types = get_post_types();
+  // Highlight menu item in post type archive, taxonomy, and singular
+  $post_types = get_post_types(['_builtin' => false]);
   foreach ($post_types as $pt) {
-    $title = get_post_type_object($pt)->labels->name;
-    if (is_post_type_archive($pt) && $item->title == $title) {
-      $classes []= 'current-menu-item';
+    $post_type = get_post_type_object($pt);
+    $title = $post_type->labels->name;
+    $menu_title = $post_type->labels->menu_name;
+    if ($item->title === $title || $item->title === $menu_title) {
+      foreach (get_object_taxonomies($pt) as $tax) {
+        if (is_tax($tax)) {
+          $classes []= 'current-menu-item';
+          break;
+        }
+      }
+      if (is_post_type_archive($pt) || is_singular($pt)) {
+        $classes []= 'current-menu-item';
+      }
     }
   }
   // if (is_search() && $item->title == 'Title') {

@@ -17,6 +17,7 @@ var stylus = require('gulp-stylus')
 var nib = require('nib')
 var jeet = require('jeet')
 var rupture = require('rupture')
+var typographic = require('typographic')
 
 var babelify = require('babelify')
 
@@ -35,7 +36,7 @@ gulp.task('css:compile', function() {
     .pipe(sourcemaps.init())
     .pipe(stylus({
       compress: true,
-      use: [nib(), jeet(), rupture()]
+      use: [nib(), jeet(), rupture(), typographic()]
     }))
     .pipe(sourcemaps.write())
     .pipe(rename('index.min.css'))

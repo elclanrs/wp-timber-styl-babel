@@ -21,6 +21,7 @@ npm install --save-dev \
   main-bower-files \
   nib \
   rupture \
+  typographic \
   uglify-js \
   vinyl-buffer \
   vinyl-source-stream \

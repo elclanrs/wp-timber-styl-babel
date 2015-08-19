@@ -1,8 +1,10 @@
 #!/bin/bash
 
 npm install --save-dev \
-  babelify \
+  babel \
   browserify \
+  babelify \
+  watchify \
   deamdify \
   debowerify \
   gulp \
@@ -17,15 +19,15 @@ npm install --save-dev \
   gulp-stylus \
   gulp-uglify \
   gulp-util \
-  jeet \
   main-bower-files \
+  stylus \
+  jeet \
   nib \
   rupture \
   typographic \
   uglify-js \
   vinyl-buffer \
-  vinyl-source-stream \
-  watchify
+  vinyl-source-stream
 
 bower install --save jquery
 bower install --save normalize.css

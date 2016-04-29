@@ -60,7 +60,7 @@ add_filter('the_title', 'highlight_search_term');
 function highlight_search_term($text) {
   if (is_search() && get_search_query()) {
     $terms = implode('|', explode(' ', get_search_query()));
-    $text = preg_replace('/('. $terms .')/i', '<span class="search-term--highlight">\0</span>', $text);
+    $text = preg_replace('/('. preg_quote($terms) .')/i', '<span class="search-term--highlight">\0</span>', $text);
   }
   return $text;
 }
